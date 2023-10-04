@@ -1,15 +1,13 @@
 # CapuletEngine class
 
-from abc import ABC
+from serviceable import Serviceable
 
-from car import Car
-
-
-class CapuletEngine(Car, ABC):
-    def __init__(self, last_service_date, current_mileage, last_service_mileage):
-        super().__init__(last_service_date)
+class CapuletEngine(Serviceable):
+    '''CapuletEngine Class'''
+    def __init__(self, current_mileage, last_service_mileage):
         self.current_mileage = current_mileage
         self.last_service_mileage = last_service_mileage
 
-    def engine_should_be_serviced(self):
+    def needs_service(self):
+        '''Returns True if the engine has more than 30,000 miles from last service, False otherwise'''
         return self.current_mileage - self.last_service_mileage > 30000
