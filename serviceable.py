@@ -2,6 +2,7 @@
 
 from abc import ABC, abstractmethod
 
+
 class Serviceable(ABC):
     '''Serviceable class'''
     @abstractmethod
