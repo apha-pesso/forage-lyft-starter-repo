@@ -13,7 +13,6 @@ class CarFactory():
 
     @staticmethod
     def create_calliope(
-            self,
             current_date,
             last_service_date,
             current_mileage,
@@ -26,7 +25,6 @@ class CarFactory():
 
     @staticmethod
     def create_glissade(
-            self,
             current_date,
             last_service_date,
             current_mileage,
@@ -39,7 +37,6 @@ class CarFactory():
 
     @staticmethod
     def create_palindrome(
-            self,
             current_date,
             last_service_date,
             warning_light_on):
@@ -51,7 +48,6 @@ class CarFactory():
 
     @staticmethod
     def create_rorschach(
-            self,
             current_date,
             last_service_date,
             current_mileage,
@@ -64,7 +60,6 @@ class CarFactory():
 
     @staticmethod
     def create_thovex(
-            self,
             current_date,
             last_service_date,
             current_mileage,
