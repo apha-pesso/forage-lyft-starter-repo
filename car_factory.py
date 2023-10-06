@@ -6,6 +6,8 @@ from car import Car
 from engine.capulet_engine import CapuletEngine
 from engine.sternman_engine import SternmanEngine
 from engine.willoughby_engine import WilloughbyEngine
+from tyre.carrigan import CarriganTyre
+from tyre.octoprime import OctoprimeTyre
 
 
 class CarFactory():
@@ -16,11 +18,13 @@ class CarFactory():
             current_date,
             last_service_date,
             current_mileage,
-            last_service_mileage):
+            last_service_mileage,
+            tyre_array):
         '''Creates a Calliope model car'''
         engine = CapuletEngine(current_mileage, last_service_mileage)
         battery = SpindlerBattery(current_date, last_service_date)
-        car = Car(engine, battery)
+        tyres = CarriganTyre(tyre_array)
+        car = Car(engine, battery, tyres)
         return car
 
     @staticmethod
@@ -28,22 +32,26 @@ class CarFactory():
             current_date,
             last_service_date,
             current_mileage,
-            last_service_mileage):
+            last_service_mileage,
+            tyre_array):
         '''Creates a Glissade model car'''
         engine = WilloughbyEngine(current_mileage, last_service_mileage)
         battery = SpindlerBattery(current_date, last_service_date)
-        car = Car(engine, battery)
+        tyres = CarriganTyre(tyre_array)
+        car = Car(engine, battery, tyres)
         return car
 
     @staticmethod
     def create_palindrome(
             current_date,
             last_service_date,
-            warning_light_on):
+            warning_light_on,
+            tyre_array):
         '''Creates a Palindrome model car'''
         engine = SternmanEngine(warning_light_on)
         battery = SpindlerBattery(current_date, last_service_date)
-        car = Car(engine, battery)
+        tyres = OctoprimeTyre(tyre_array)
+        car = Car(engine, battery, tyres)
         return car
 
     @staticmethod
@@ -51,11 +59,13 @@ class CarFactory():
             current_date,
             last_service_date,
             current_mileage,
-            last_service_mileage):
+            last_service_mileage,
+            tyre_array):
         '''Creates a Rorschach model car'''
         engine = WilloughbyEngine(current_mileage, last_service_mileage)
         battery = NubbinBattery(current_date, last_service_date)
-        car = Car(engine, battery)
+        tyres = CarriganTyre(tyre_array)
+        car = Car(engine, battery, tyres)
         return car
 
     @staticmethod
@@ -63,9 +73,11 @@ class CarFactory():
             current_date,
             last_service_date,
             current_mileage,
-            last_service_mileage):
+            last_service_mileage,
+            tyre_array):
         '''Creates a Thovex model car'''
         engine = CapuletEngine(current_mileage, last_service_mileage)
         battery = NubbinBattery(current_date, last_service_date)
-        car = Car(engine, battery)
+        tyres = OctoprimeTyre(tyre_array)
+        car = Car(engine, battery, tyres)
         return car
